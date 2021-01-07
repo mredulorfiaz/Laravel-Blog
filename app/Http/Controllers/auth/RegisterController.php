@@ -8,10 +8,16 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware(['guest']);
+    }
     public function index(){
         return view('auth/register');
     }
     public function store(Request $request){
+
+        // dd($request->only('email', 'password'));
         // validation
         $this->validate($request, 
         [
@@ -29,6 +35,16 @@ class RegisterController extends Controller
         'username' => $request->username
 
     ]);
+    
+    // auth()->attempt([
+    //     'email' => $request->email,
+    //     'password' => $request->password,
+    // ]);
+    auth()->attempt($request->only('email', 'password'));
+
+
+    return redirect()->route('dashboard');
+
 
 
     }
