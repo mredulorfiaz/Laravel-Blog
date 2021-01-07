@@ -27,23 +27,23 @@ class RegisterController extends Controller
             'password' => 'required|confirmed'
         ]
 
-    );
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-        'username' => $request->username
+        );
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'username' => $request->username
 
-    ]);
-    
-    // auth()->attempt([
-    //     'email' => $request->email,
-    //     'password' => $request->password,
-    // ]);
-    auth()->attempt($request->only('email', 'password'));
+        ]);
+        
+        // auth()->attempt([
+        //     'email' => $request->email,
+        //     'password' => $request->password,
+        // ]);
+        auth()->attempt($request->only('email', 'password'));
 
 
-    return redirect()->route('dashboard');
+        return redirect()->route('dashboard');
 
 
 
