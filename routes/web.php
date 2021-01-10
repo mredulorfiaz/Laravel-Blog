@@ -8,22 +8,19 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\NewsController;
 
-Route::get('/posts', function () {
-    // return view('welcome');
-    return view('posts.index');
-});
+// Route::get('/posts', function () {
+//     // return view('welcome');
+//     return view('posts.index');
+// });
 
 
 Route::get('/',function(){
     return view('home');
 }) -> name('home');
 Route::get('/dashboard', [DashboardController::class, 'index']) -> name('dashboard');
+
 Route::get('/posts', [PostController::class, 'index']) -> name('posts');
 Route::post('/posts', [PostController::class, 'store']);
-
-
-Route::get('/response', [NewsController::class, 'index']);
-
 
 
 Route::post('/logout', [LogoutController::class, 'store']) -> name('logout');
@@ -42,3 +39,9 @@ function (){
     return view('layouts.app');
 }
 );
+
+Route::get('/response', [NewsController::class, 'index']);\
+Route::get('/shownews', [NewsController::class, 'showNews'])-> name('showNews');
+
+
+Route::get('/news', [NewsController::class, 'save']);

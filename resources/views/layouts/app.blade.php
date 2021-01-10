@@ -13,7 +13,8 @@
         <ul class="flex items-center">
             <li ><a href="/" class="p-3">Home</a></li>
             <li><a href="{{ route('dashboard') }}" class="p-3">Dashboard </a></li>
-            <li><a href="{{ route('posts') }}" class="p-3">Posts</a></li>
+            {{-- <li><a href="{{ route('posts') }}" class="p-3">Posts</a></li> --}}
+            <li><a href="{{ route('showNews') }}" class="p-3">News</a></li>
         </ul>
 
         <ul class="flex items-center">
