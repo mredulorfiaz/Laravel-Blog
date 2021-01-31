@@ -16,7 +16,7 @@ class NewsController extends Controller
     
     public function index(){
         $client = new Client();
-        $response = $client->request('GET','https://newsapi.org/v2/top-headlines?country=us',[
+        $response = $client->request('GET','https://newsapi.org/v2/top-headlines?country=au',[
             'headers' => [
                 'Authorization' => '904144d6d5524db2a98d44e3b4cccc30'
             ]

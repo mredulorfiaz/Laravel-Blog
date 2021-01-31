@@ -14,6 +14,7 @@
                 </div>
                 
             @endif
+            
             <div class="mb-4">
                 <label for="email" class="sr-only">Email</label>
                 <input type="email" name="email" id="email" placeholder="Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="{{ old('email')}}">
@@ -21,10 +22,10 @@
                 @error('email')
                     <div class="text-red-500 mt-1 text-sm">
                         {{ $message }}
-                    </div>
-                    
+                    </div>                   
                 @enderror
             </div>
+
             <div class="mb-4">
                 <label for="password" class="sr-only">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name')
